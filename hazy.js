@@ -1,10 +1,15 @@
 (function hazy() {
-  if (!Spicetify?.Platform || !Spicetify?.Platform?.History?.listen) {
+  if (
+    !Spicetify?.Platform?.History?.listen ||
+    typeof Spicetify?.Player?.addEventListener !== "function" ||
+    typeof Spicetify?.Topbar?.Button !== "function" ||
+    typeof Spicetify?.PopupModal?.display !== "function"
+  ) {
     setTimeout(hazy, 100);
     return;
   }
 
-  const forkVersion = "0.1.4";
+  const forkVersion = "0.1.5";
   let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
   if (!transparencyStyle) {
     transparencyStyle = document.createElement("style");
