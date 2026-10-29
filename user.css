@@ -19,6 +19,35 @@
   background-color: transparent !important;
 }
 
+:is(
+  .main-entityHeader-background.main-entityHeader-gradient,
+  .main-entityHeader-wavesBackground,
+  .main-entityHeader-mermaidGradientOverlay
+) {
+  display: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+:is(
+  .main-entityHeader-container,
+  .main-entityHeader-containerNormal,
+  .main-entityHeader-withBackgroundImage,
+  .main-entityHeader-background,
+  .main-entityHeader-overlay
+)::before,
+:is(
+  .main-entityHeader-container,
+  .main-entityHeader-containerNormal,
+  .main-entityHeader-withBackgroundImage,
+  .main-entityHeader-background,
+  .main-entityHeader-overlay
+)::after {
+  background: none !important;
+  background-image: none !important;
+}
+
 /* Spotify sometimes applies the opaque color to nested header wrappers. */
 :is(.main-entityHeader-container, .main-entityHeader-withBackgroundImage)
   :is([class*="backgroundColor"], [class*="BackgroundColor"]) {
