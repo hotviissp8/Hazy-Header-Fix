@@ -9,7 +9,7 @@
     return;
   }
 
-  const forkVersion = "0.1.6";
+  const forkVersion = "0.1.8";
   let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
   if (!transparencyStyle) {
     transparencyStyle = document.createElement("style");
@@ -29,14 +29,21 @@
       background: none !important;
       background-color: transparent !important;
       --background-base: transparent !important;
+      --bgColor: transparent !important;
     }
-    .main-entityHeader-background,
     .main-entityHeader-backgroundColor,
-    .main-entityHeader-overlay {
-      background-color: transparent !important;
-    }
-    .main-entityHeader-background.main-entityHeader-gradient {
+    .main-entityHeader-background.main-entityHeader-overlay {
+      display: none !important;
       background: none !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      --bgColor: transparent !important;
+    }
+    .main-entityHeader-gradient {
+      background: none !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      --bgColor: transparent !important;
     }
     :is(
       .main-entityHeader-background.main-entityHeader-gradient,
@@ -63,7 +70,9 @@
       .main-entityHeader-overlay
     )::after {
       background: none !important;
+      background-color: transparent !important;
       background-image: none !important;
+      --bgColor: transparent !important;
     }
   `;
 

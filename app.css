@@ -871,14 +871,20 @@ PLAYLIST VIEW
   background: none !important;
   background-color: transparent !important;
   --background-base: transparent !important;
+  --bgColor: transparent !important;
 }
 
-.main-entityHeader-background {
+.main-entityHeader-backgroundColor,
+.main-entityHeader-background.main-entityHeader-overlay {
+  display: none !important;
+  background: none !important;
   background-color: transparent !important;
+  background-image: none !important;
+  --bgColor: transparent !important;
 }
 
 :is(
-  .main-entityHeader-background.main-entityHeader-gradient,
+  .main-entityHeader-gradient,
   .main-entityHeader-wavesBackground,
   .main-entityHeader-mermaidGradientOverlay
 ) {
@@ -886,6 +892,7 @@ PLAYLIST VIEW
   background: none !important;
   background-color: transparent !important;
   background-image: none !important;
+  --bgColor: transparent !important;
 }
 
 :is(
@@ -903,7 +910,9 @@ PLAYLIST VIEW
   .main-entityHeader-overlay
 )::after {
   background: none !important;
+  background-color: transparent !important;
   background-image: none !important;
+  --bgColor: transparent !important;
 }
 
 :is(.main-entityHeader-container, .main-entityHeader-withBackgroundImage)
