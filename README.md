@@ -6,7 +6,7 @@ This project is independently maintained and is not affiliated with Astromations
 
 ## Install from Spicetify Marketplace
 
-Find **Hazy Header Fix** in Marketplace's Themes tab and install it. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest.
+Find **Hazy Header Fix · hotviissp8** in Marketplace's Themes tab and install it. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest. Version 0.1.1 shows a matching badge in Spotify so you can confirm the fork is active.
 
 
 ## Preview
@@ -43,24 +43,24 @@ Find **Hazy Header Fix** in Marketplace's Themes tab and install it. The public 
 Windows -> **PowerShell**:
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/Astromations/Hazy/main/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/hotviissp8/Hazy-Header-Fix/main/install.ps1 | iex
 ```
 
 macOS and Linux -> **Bash**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Astromations/Hazy/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/hotviissp8/Hazy-Header-Fix/main/install.sh | sh
 ```    
     
 ### 📃 Manual Installation 📃
 
 ---
 
-Download the repo and put `user.css`, `theme.js` and `color.ini` into a new folder named `Hazy`, and place this folder into your `Themes` folder in `.spicetify`.
+Download this fork and put `user.css`, `theme.js` and `color.ini` into a new folder named `Hazy-Header-Fix`, and place this folder into your `Themes` folder in `.spicetify`.
 Then run these commands to apply:
     
 ```powershell
-spicetify config current_theme Hazy
+spicetify config current_theme Hazy-Header-Fix
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1 inject_theme_js 1
 spicetify apply
 ```
@@ -76,6 +76,6 @@ Spicetify v3 loads themes as modules from `~/.config/spicetify/modules/` and ign
 spicetify apply
 ```
 
-Then enable Hazy from the Spicetify manager in the client. Only one theme loads at a time, and if the last active theme is disabled no theme loads, so enable Hazy explicitly.
+Then enable Hazy Header Fix from the Spicetify manager in the client. Only one theme loads at a time, and if the last active theme is disabled no theme loads, so enable Hazy Header Fix explicitly.
 
 

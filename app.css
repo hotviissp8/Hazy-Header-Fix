@@ -863,18 +863,41 @@ PLAYLIST VIEW
   .main-entityHeader-container,
   .main-entityHeader-containerNormal,
   .main-entityHeader-withBackgroundImage,
-  .main-entityHeader-background,
   .main-entityHeader-backgroundColor,
   .main-entityHeader-overlay,
   .main-actionBarBackground-background,
   .playlist-playlist-playlistContent
 ) {
+  background: none !important;
+  background-color: transparent !important;
+  --background-base: transparent !important;
+}
+
+.main-entityHeader-background {
   background-color: transparent !important;
 }
 
 :is(.main-entityHeader-container, .main-entityHeader-withBackgroundImage)
   :is([class*="backgroundColor"], [class*="BackgroundColor"]) {
   background-color: transparent !important;
+}
+
+.Root__top-container::after {
+  content: "Hazy Header Fix · hotviissp8 · 0.1.1";
+  position: fixed;
+  right: 12px;
+  bottom: 102px;
+  z-index: 10000;
+  padding: 5px 9px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 999px;
+  background: #bd3a9b;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+  color: #fff;
+  font: 700 10px/1.2 sans-serif;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .M7ECcaA17LC8UqL2GKVD {
