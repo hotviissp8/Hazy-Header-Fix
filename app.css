@@ -884,6 +884,22 @@ PLAYLIST VIEW
 }
 
 :is(
+  .main-entityHeader-background,
+  .main-entityHeader-backgroundColor,
+  .main-entityHeader-overlay,
+  .main-entityHeader-gradient,
+  .main-entityHeader-wavesBackground,
+  .main-entityHeader-mermaidGradientOverlay,
+  .main-actionBarBackground-background
+) {
+  display: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  --bgColor: transparent !important;
+}
+
+:is(
   .main-entityHeader-gradient,
   .main-entityHeader-wavesBackground,
   .main-entityHeader-mermaidGradientOverlay

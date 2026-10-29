@@ -9,7 +9,7 @@
     return;
   }
 
-  const forkVersion = "0.1.8";
+  const forkVersion = "0.1.9";
   let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
   if (!transparencyStyle) {
     transparencyStyle = document.createElement("style");
@@ -33,6 +33,21 @@
     }
     .main-entityHeader-backgroundColor,
     .main-entityHeader-background.main-entityHeader-overlay {
+      display: none !important;
+      background: none !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      --bgColor: transparent !important;
+    }
+    :is(
+      .main-entityHeader-background,
+      .main-entityHeader-backgroundColor,
+      .main-entityHeader-overlay,
+      .main-entityHeader-gradient,
+      .main-entityHeader-wavesBackground,
+      .main-entityHeader-mermaidGradientOverlay,
+      .main-actionBarBackground-background
+    ) {
       display: none !important;
       background: none !important;
       background-color: transparent !important;

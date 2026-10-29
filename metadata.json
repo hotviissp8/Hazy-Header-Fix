@@ -1,7 +1,7 @@
 {
   "name": "hazy-header-fix",
   "kind": "theme",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "authors": ["hotviissp8", "Astromations (original Hazy theme)"],
   "description": "A Hazy theme variant with transparent playlist and page headers",
   "tags": ["dark", "transparent", "hazy"],
