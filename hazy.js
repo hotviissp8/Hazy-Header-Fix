@@ -1,132 +1,8 @@
 (function hazy() {
-  if (
-    !Spicetify?.Platform?.History?.listen ||
-    typeof Spicetify?.Player?.addEventListener !== "function" ||
-    typeof Spicetify?.Topbar?.Button !== "function" ||
-    typeof Spicetify?.PopupModal?.display !== "function"
-  ) {
+  if (!Spicetify?.Platform || !Spicetify?.Platform?.History?.listen) {
     setTimeout(hazy, 100);
     return;
   }
-
-  const forkVersion = "0.1.11";
-  let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
-  if (!transparencyStyle) {
-    transparencyStyle = document.createElement("style");
-    transparencyStyle.id = "hazy-header-fix-transparency";
-    document.head.appendChild(transparencyStyle);
-  }
-  transparencyStyle.textContent = `
-    .Root__main-view:has([data-testid="entity-header"]),
-    .Root__main-view:has([data-testid="entity-header"]) * {
-      --background-base: transparent !important;
-      --background-base-min-contrast: transparent !important;
-      --background-base-70: transparent !important;
-    }
-    .Root__main-view:has([data-testid="entity-header"]) [style*="--background-base"],
-    .Root__main-view:has([data-testid="entity-header"]) [style*="--background-base-min-contrast"] {
-      background-color: transparent !important;
-      background-image: none !important;
-    }
-    :is(
-      .main-entityHeader-container,
-      .main-entityHeader-containerNormal,
-      .main-entityHeader-withBackgroundImage,
-      .main-entityHeader-backgroundColor,
-      .main-entityHeader-overlay,
-      .main-actionBarBackground-background,
-      .playlist-playlist-playlistContent
-    ) {
-      background: none !important;
-      background-color: transparent !important;
-      --background-base: transparent !important;
-      --bgColor: transparent !important;
-    }
-    .main-entityHeader-backgroundColor,
-    .main-entityHeader-background.main-entityHeader-overlay {
-      display: none !important;
-      background: none !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      --bgColor: transparent !important;
-    }
-    :is(
-      .main-entityHeader-background,
-      .main-entityHeader-backgroundColor,
-      .main-entityHeader-overlay,
-      .main-entityHeader-gradient,
-      .main-entityHeader-wavesBackground,
-      .main-entityHeader-mermaidGradientOverlay,
-      .main-actionBarBackground-background
-    ) {
-      display: none !important;
-      background: none !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      --bgColor: transparent !important;
-    }
-    .main-entityHeader-gradient {
-      background: none !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      --bgColor: transparent !important;
-    }
-    :is(
-      .main-entityHeader-background.main-entityHeader-gradient,
-      .main-entityHeader-wavesBackground,
-      .main-entityHeader-mermaidGradientOverlay
-    ) {
-      display: none !important;
-      background: none !important;
-      background-color: transparent !important;
-      background-image: none !important;
-    }
-    :is(
-      .main-entityHeader-container,
-      .main-entityHeader-containerNormal,
-      .main-entityHeader-withBackgroundImage,
-      .main-entityHeader-background,
-      .main-entityHeader-overlay
-    )::before,
-    :is(
-      .main-entityHeader-container,
-      .main-entityHeader-containerNormal,
-      .main-entityHeader-withBackgroundImage,
-      .main-entityHeader-background,
-      .main-entityHeader-overlay
-    )::after {
-      background: none !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      --bgColor: transparent !important;
-    }
-  `;
-
-  const markerId = "hazy-header-fix-version-marker";
-  let versionMarker = document.getElementById(markerId);
-  if (!versionMarker) {
-    versionMarker = document.createElement("div");
-    versionMarker.id = markerId;
-    document.body.appendChild(versionMarker);
-  }
-  versionMarker.textContent = `Hazy Header Fix · hotviissp8 · ${forkVersion}`;
-  versionMarker.title = "Loaded from hotviissp8/Hazy-Header-Fix";
-  Object.assign(versionMarker.style, {
-    position: "fixed",
-    right: "12px",
-    bottom: "102px",
-    zIndex: "2147483647",
-    padding: "5px 9px",
-    border: "1px solid rgb(255 255 255 / 45%)",
-    borderRadius: "999px",
-    background: "#bd3a9b",
-    boxShadow: "0 2px 10px rgb(0 0 0 / 25%)",
-    color: "#fff",
-    font: "700 10px/1.2 sans-serif",
-    letterSpacing: "0.02em",
-    pointerEvents: "none",
-    whiteSpace: "nowrap",
-  });
 
   const defImage = "https://i.imgur.com/Wl2D0h0.png";
   let startImage = localStorage.getItem("hazy:startupBg") || defImage;
@@ -669,7 +545,7 @@
   }; */
 
   // Create edit home topbar button
-  const homeEdit = new Spicetify.Topbar.Button(`Hazy Header Fix · ${forkVersion}`, "edit", () => {
+  const homeEdit = new Spicetify.Topbar.Button("Hazy Settings", "edit", () => {
     const content = document.createElement("div");
     content.innerHTML = `
     <div class="main-playlistEditDetailsModal-albumCover" id="home-select">
@@ -902,7 +778,7 @@
     buttonsRow.append(issueButton, resetButton, saveButton);
     content.append(buttonsRow);
 
-    Spicetify.PopupModal.display({ title: `Hazy Header Fix · ${forkVersion}`, content });
+    Spicetify.PopupModal.display({ title: "Hazy Settings", content });
   });
   homeEdit.element.classList.toggle("hidden", false);
 })();

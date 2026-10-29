@@ -1,11 +1,11 @@
 {
-  "name": "Hazy Header Fix · hotviissp8 · 0.1.11",
+  "name": "Hazy Header Fix · hotviissp8 · 0.1.12",
   "description": "A Hazy theme variant that keeps playlist and page headers transparent",
   "preview": "hazy_home.png",
   "readme": "README.md",
-  "usercss": "https://cdn.jsdelivr.net/gh/hotviissp8/Hazy-Header-Fix@v0.1.11/user.css",
+  "usercss": "https://cdn.jsdelivr.net/gh/hotviissp8/Hazy-Header-Fix@v0.1.12/user.css",
   "schemes": "https://cdn.jsdelivr.net/gh/astromations/hazy/color.ini",
-  "include": ["https://cdn.jsdelivr.net/gh/hotviissp8/Hazy-Header-Fix@v0.1.11/hazy.js"],
+  "include": ["https://cdn.jsdelivr.net/gh/hotviissp8/Hazy-Header-Fix@v0.1.12/hazy.js"],
   "authors": [
     {
       "name": "hotviissp8",

@@ -758,20 +758,6 @@ WHAT'S NEW
 PLAYLIST VIEW
 ------------*/
 
-/* Clear Spotify's dynamic image-derived playlist background tokens. */
-.Root__main-view:has([data-testid="entity-header"]),
-.Root__main-view:has([data-testid="entity-header"]) * {
-  --background-base: transparent !important;
-  --background-base-min-contrast: transparent !important;
-  --background-base-70: transparent !important;
-}
-
-.Root__main-view:has([data-testid="entity-header"]) [style*="--background-base"],
-.Root__main-view:has([data-testid="entity-header"]) [style*="--background-base-min-contrast"] {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
 .Root__main-view {
   background-color: var(--backdrop) !important;
 }
@@ -877,79 +863,19 @@ PLAYLIST VIEW
   .main-entityHeader-container,
   .main-entityHeader-containerNormal,
   .main-entityHeader-withBackgroundImage,
+  .main-entityHeader-background,
   .main-entityHeader-backgroundColor,
   .main-entityHeader-overlay,
   .main-actionBarBackground-background,
   .playlist-playlist-playlistContent
 ) {
-  background: none !important;
   background-color: transparent !important;
-  --background-base: transparent !important;
-  --bgColor: transparent !important;
-}
-
-.main-entityHeader-backgroundColor,
-.main-entityHeader-background.main-entityHeader-overlay {
-  display: none !important;
-  background: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  --bgColor: transparent !important;
-}
-
-:is(
-  .main-entityHeader-background,
-  .main-entityHeader-backgroundColor,
-  .main-entityHeader-overlay,
-  .main-entityHeader-gradient,
-  .main-entityHeader-wavesBackground,
-  .main-entityHeader-mermaidGradientOverlay,
-  .main-actionBarBackground-background
-) {
-  display: none !important;
-  background: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  --bgColor: transparent !important;
-}
-
-:is(
-  .main-entityHeader-gradient,
-  .main-entityHeader-wavesBackground,
-  .main-entityHeader-mermaidGradientOverlay
-) {
-  display: none !important;
-  background: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  --bgColor: transparent !important;
-}
-
-:is(
-  .main-entityHeader-container,
-  .main-entityHeader-containerNormal,
-  .main-entityHeader-withBackgroundImage,
-  .main-entityHeader-background,
-  .main-entityHeader-overlay
-)::before,
-:is(
-  .main-entityHeader-container,
-  .main-entityHeader-containerNormal,
-  .main-entityHeader-withBackgroundImage,
-  .main-entityHeader-background,
-  .main-entityHeader-overlay
-)::after {
-  background: none !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  --bgColor: transparent !important;
 }
 
 :is(.main-entityHeader-container, .main-entityHeader-withBackgroundImage)
   :is([class*="backgroundColor"], [class*="BackgroundColor"]) {
   background-color: transparent !important;
 }
-
 
 .M7ECcaA17LC8UqL2GKVD {
   background-color: transparent !important;
@@ -2674,7 +2600,7 @@ HOME POPUP
   margin-bottom: 20px;
 }
 
-div[aria-label^="Hazy Header Fix"] .main-trackCreditsModal-mainSection {
+div[aria-label="Hazy Settings"] .main-trackCreditsModal-mainSection {
   overflow-y: hidden;
   padding: 24px;
 }
