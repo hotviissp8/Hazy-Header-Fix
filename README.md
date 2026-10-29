@@ -6,7 +6,7 @@ This project is independently maintained and is not affiliated with Astromations
 
 ## Install from Spicetify Marketplace
 
-In Marketplace, open **Themes**, change sorting from **Stars** to **Last Updated**, then search for **Hazy Header Fix · hotviissp8 · 0.1.12** and install it. New themes have few stars and are otherwise buried below popular themes. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest.
+In Marketplace, open **Themes**, change sorting from **Stars** to **Last Updated**, then search for **Hazy Header Fix · hotviissp8 · 0.1.13** and install it. New themes have few stars and are otherwise buried below popular themes. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest. The version is shown in the Hazy settings window title; no floating version badge is added.
 
 
 ## Preview

@@ -4,6 +4,104 @@
     return;
   }
 
+  const forkVersion = "0.1.13";
+  const transparentHeaderTokens = [
+    "--background-base",
+    "--background-base-min-contrast",
+    "--background-base-70",
+  ];
+
+  function setImportant(node, property, value) {
+    if (
+      node.style.getPropertyValue(property).trim() !== value ||
+      node.style.getPropertyPriority(property) !== "important"
+    ) {
+      node.style.setProperty(property, value, "important");
+    }
+  }
+
+  function clearPlaylistHeaderBackground() {
+    const header = document.querySelector('[data-testid="entity-header"]');
+    if (!header?.parentElement) return;
+
+    const upperLayer = header.parentElement;
+    const upperRect = upperLayer.getBoundingClientRect();
+    const nearby = new Set();
+    let ancestor = upperLayer.parentElement;
+
+    for (let depth = 0; ancestor && depth < 4; depth += 1) {
+      for (const sibling of ancestor.children) {
+        if (sibling === upperLayer || sibling.contains(upperLayer)) continue;
+        const rect = sibling.getBoundingClientRect();
+        if (
+          rect.width >= upperRect.width * 0.7 &&
+          rect.height >= 24 &&
+          rect.top >= upperRect.top - 8 &&
+          rect.top <= upperRect.bottom + 40
+        ) {
+          nearby.add(sibling);
+        }
+      }
+      ancestor = ancestor.parentElement;
+    }
+
+    const lowerLayer = [...nearby].sort((a, b) => {
+      const aTop = a.getBoundingClientRect().top;
+      const bTop = b.getBoundingClientRect().top;
+      return Math.abs(aTop - upperRect.bottom) - Math.abs(bTop - upperRect.bottom);
+    })[0];
+
+    for (const layer of [upperLayer, lowerLayer].filter(Boolean)) {
+      if (layer.dataset.hazyTransparentHeader !== "true") {
+        layer.dataset.hazyTransparentHeader = "true";
+      }
+      const elements = [layer, ...layer.querySelectorAll("*")];
+      for (const element of elements) {
+        for (const token of transparentHeaderTokens) {
+          setImportant(element, token, "transparent");
+        }
+
+        const rect = element.getBoundingClientRect();
+        if (rect.width >= upperRect.width * 0.7 && rect.height >= 60) {
+          setImportant(element, "background-color", "transparent");
+          setImportant(element, "background-image", "none");
+        }
+      }
+    }
+
+    headerLayerObserver.disconnect();
+    for (const layer of [upperLayer, lowerLayer].filter(Boolean)) {
+      headerLayerObserver.observe(layer, {
+        attributes: true,
+        attributeFilter: ["class", "style"],
+        childList: true,
+        subtree: true,
+      });
+    }
+  }
+
+  let headerFixQueued = false;
+  function queuePlaylistHeaderFix() {
+    if (headerFixQueued) return;
+    headerFixQueued = true;
+    requestAnimationFrame(() => {
+      headerFixQueued = false;
+      clearPlaylistHeaderBackground();
+    });
+  }
+
+  const headerFixObserver = new MutationObserver(queuePlaylistHeaderFix);
+  headerFixObserver.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+  });
+  const headerLayerObserver = new MutationObserver(queuePlaylistHeaderFix);
+  Spicetify.Platform.History.listen(queuePlaylistHeaderFix);
+  queuePlaylistHeaderFix();
+
+  // Kept in the settings window title for build identification.
+  const settingsTitle = `Hazy Header Fix · ${forkVersion}`;
+
   const defImage = "https://i.imgur.com/Wl2D0h0.png";
   let startImage = localStorage.getItem("hazy:startupBg") || defImage;
   const toggleInfo = [
@@ -545,7 +643,7 @@
   }; */
 
   // Create edit home topbar button
-  const homeEdit = new Spicetify.Topbar.Button("Hazy Settings", "edit", () => {
+  const homeEdit = new Spicetify.Topbar.Button(settingsTitle, "edit", () => {
     const content = document.createElement("div");
     content.innerHTML = `
     <div class="main-playlistEditDetailsModal-albumCover" id="home-select">
@@ -778,7 +876,7 @@
     buttonsRow.append(issueButton, resetButton, saveButton);
     content.append(buttonsRow);
 
-    Spicetify.PopupModal.display({ title: "Hazy Settings", content });
+    Spicetify.PopupModal.display({ title: settingsTitle, content });
   });
   homeEdit.element.classList.toggle("hidden", false);
 })();

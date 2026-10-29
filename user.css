@@ -1,5 +1,12 @@
 @import url("https://cdn.jsdelivr.net/gh/astromations/hazy/app.css");
 
+[data-hazy-transparent-header]::before,
+[data-hazy-transparent-header]::after {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
 /* Remove Spotify's default image-derived playlist header background. */
 .main-entityHeader-container .kMUtWcOMOZmCWTMAc_gu {
   background-color: transparent !important;
