@@ -4,7 +4,7 @@
     return;
   }
 
-  const forkVersion = "0.1.3";
+  const forkVersion = "0.1.4";
   let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
   if (!transparencyStyle) {
     transparencyStyle = document.createElement("style");
