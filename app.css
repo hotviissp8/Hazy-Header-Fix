@@ -758,14 +758,18 @@ WHAT'S NEW
 PLAYLIST VIEW
 ------------*/
 
-/* Spotify playlist header color layers identified in the current DOM. */
-.N6W22Ky7W6I93tr3vrqE,
-.T2XRKvkWneSSMSOCEo40 {
-  background: transparent !important;
+/* Clear Spotify's dynamic image-derived playlist background tokens. */
+.Root__main-view:has([data-testid="entity-header"]),
+.Root__main-view:has([data-testid="entity-header"]) * {
+  --background-base: transparent !important;
+  --background-base-min-contrast: transparent !important;
+  --background-base-70: transparent !important;
+}
+
+.Root__main-view:has([data-testid="entity-header"]) [style*="--background-base"],
+.Root__main-view:has([data-testid="entity-header"]) [style*="--background-base-min-contrast"] {
   background-color: transparent !important;
   background-image: none !important;
-  --bgColor: transparent !important;
-  --background-base: transparent !important;
 }
 
 .Root__main-view {

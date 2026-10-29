@@ -9,7 +9,7 @@
     return;
   }
 
-  const forkVersion = "0.1.10";
+  const forkVersion = "0.1.11";
   let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
   if (!transparencyStyle) {
     transparencyStyle = document.createElement("style");
@@ -17,13 +17,16 @@
     document.head.appendChild(transparencyStyle);
   }
   transparencyStyle.textContent = `
-    .N6W22Ky7W6I93tr3vrqE,
-    .T2XRKvkWneSSMSOCEo40 {
-      background: transparent !important;
+    .Root__main-view:has([data-testid="entity-header"]),
+    .Root__main-view:has([data-testid="entity-header"]) * {
+      --background-base: transparent !important;
+      --background-base-min-contrast: transparent !important;
+      --background-base-70: transparent !important;
+    }
+    .Root__main-view:has([data-testid="entity-header"]) [style*="--background-base"],
+    .Root__main-view:has([data-testid="entity-header"]) [style*="--background-base-min-contrast"] {
       background-color: transparent !important;
       background-image: none !important;
-      --bgColor: transparent !important;
-      --background-base: transparent !important;
     }
     :is(
       .main-entityHeader-container,

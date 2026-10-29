@@ -6,7 +6,7 @@ This project is independently maintained and is not affiliated with Astromations
 
 ## Install from Spicetify Marketplace
 
-In Marketplace, open **Themes**, change sorting from **Stars** to **Last Updated**, then search for **Hazy Header Fix · hotviissp8 · 0.1.10** and install it. New themes have few stars and are otherwise buried below popular themes. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest. Version 0.1.10 shows a matching badge in Spotify and names the pencil button so you can confirm the fork is active.
+In Marketplace, open **Themes**, change sorting from **Stars** to **Last Updated**, then search for **Hazy Header Fix · hotviissp8 · 0.1.11** and install it. New themes have few stars and are otherwise buried below popular themes. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest. Version 0.1.11 shows a matching badge in Spotify and names the pencil button so you can confirm the fork is active.
 
 
 ## Preview
