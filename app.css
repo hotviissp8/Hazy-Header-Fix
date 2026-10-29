@@ -858,6 +858,25 @@ PLAYLIST VIEW
   background-color: transparent !important;
 }
 
+/* Keep entity and playlist headers transparent across Spotify UI updates. */
+:is(
+  .main-entityHeader-container,
+  .main-entityHeader-containerNormal,
+  .main-entityHeader-withBackgroundImage,
+  .main-entityHeader-background,
+  .main-entityHeader-backgroundColor,
+  .main-entityHeader-overlay,
+  .main-actionBarBackground-background,
+  .playlist-playlist-playlistContent
+) {
+  background-color: transparent !important;
+}
+
+:is(.main-entityHeader-container, .main-entityHeader-withBackgroundImage)
+  :is([class*="backgroundColor"], [class*="BackgroundColor"]) {
+  background-color: transparent !important;
+}
+
 .M7ECcaA17LC8UqL2GKVD {
   background-color: transparent !important;
 }

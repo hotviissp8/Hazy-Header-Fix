@@ -1,15 +1,15 @@
 {
-  "name": "Hazy",
-  "description": "A Hazy spicetify theme",
+  "name": "Hazy Header Fix",
+  "description": "A Hazy theme variant that keeps playlist and page headers transparent",
   "preview": "hazy_home.png",
   "readme": "README.md",
-  "usercss": "https://cdn.jsdelivr.net/gh/astromations/hazy/app.css",
+  "usercss": "https://cdn.jsdelivr.net/gh/hotviissp8/Hazy-Header-Fix/user.css",
   "schemes": "https://cdn.jsdelivr.net/gh/astromations/hazy/color.ini",
   "include": ["https://cdn.jsdelivr.net/gh/astromations/hazy/hazy.js"],
   "authors": [
     {
-      "name": "Astromations",
-      "url": "https://github.com/Astromations"
+      "name": "hotviissp8",
+      "url": "https://github.com/hotviissp8"
     }
   ],
   "tags": ["dark", "transparent", "hazy"]

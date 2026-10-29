@@ -1,1 +1,21 @@
 @import url("https://cdn.jsdelivr.net/gh/astromations/hazy/app.css");
+
+/* Keep Spotify entity and playlist headers transparent after recent UI changes. */
+:is(
+  .main-entityHeader-container,
+  .main-entityHeader-containerNormal,
+  .main-entityHeader-withBackgroundImage,
+  .main-entityHeader-background,
+  .main-entityHeader-backgroundColor,
+  .main-entityHeader-overlay,
+  .main-actionBarBackground-background,
+  .playlist-playlist-playlistContent
+) {
+  background-color: transparent !important;
+}
+
+/* Spotify sometimes applies the opaque color to nested header wrappers. */
+:is(.main-entityHeader-container, .main-entityHeader-withBackgroundImage)
+  :is([class*="backgroundColor"], [class*="BackgroundColor"]) {
+  background-color: transparent !important;
+}

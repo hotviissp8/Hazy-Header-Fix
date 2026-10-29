@@ -1,9 +1,9 @@
 {
-  "name": "hazy",
+  "name": "hazy-header-fix",
   "kind": "theme",
   "version": "0.1.0",
-  "authors": ["Astromations"],
-  "description": "A Hazy spicetify theme",
+  "authors": ["hotviissp8", "Astromations (original Hazy theme)"],
+  "description": "A Hazy theme variant with transparent playlist and page headers",
   "tags": ["dark", "transparent", "hazy"],
   "entries": { "js": "index.js", "css": "app.css" },
   "hasMixins": false,

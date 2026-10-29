@@ -1,6 +1,12 @@
-# Hazy 
+# Hazy Header Fix
 
-A translucent theme based on <a href="https://github.com/JulienMaille/spicetify-dynamic-theme">DynamicDefault</a> and <a href="https://github.com/nimsandu/spicetify-bloom">Bloom</a>. If you're liking Hazy, please don't forget to ⭐ the project.
+A community variant of <a href="https://github.com/Astromations/Hazy">Astromations/Hazy</a>, with a fix for opaque playlist and page headers. It keeps the original translucent Hazy styling and adds transparent backgrounds to Spotify's entity header wrappers.
+
+This project is independently maintained and is not affiliated with Astromations.
+
+## Install from Spicetify Marketplace
+
+Find **Hazy Header Fix** in Marketplace's Themes tab and install it. The public repository is tagged `spicetify-themes` and includes the Marketplace manifest.
 
 
 ## Preview
