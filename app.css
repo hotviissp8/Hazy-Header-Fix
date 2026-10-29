@@ -758,6 +758,16 @@ WHAT'S NEW
 PLAYLIST VIEW
 ------------*/
 
+/* Spotify playlist header color layers identified in the current DOM. */
+.N6W22Ky7W6I93tr3vrqE,
+.T2XRKvkWneSSMSOCEo40 {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  --bgColor: transparent !important;
+  --background-base: transparent !important;
+}
+
 .Root__main-view {
   background-color: var(--backdrop) !important;
 }

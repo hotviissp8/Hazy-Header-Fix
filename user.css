@@ -1,5 +1,15 @@
 @import url("https://cdn.jsdelivr.net/gh/astromations/hazy/app.css");
 
+/* Spotify playlist header color layers identified in the current DOM. */
+.N6W22Ky7W6I93tr3vrqE,
+.T2XRKvkWneSSMSOCEo40 {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  --bgColor: transparent !important;
+  --background-base: transparent !important;
+}
+
 /* Keep Spotify entity and playlist headers transparent after recent UI changes. */
 :is(
   .main-entityHeader-container,

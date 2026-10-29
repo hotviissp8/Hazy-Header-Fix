@@ -9,7 +9,7 @@
     return;
   }
 
-  const forkVersion = "0.1.9";
+  const forkVersion = "0.1.10";
   let transparencyStyle = document.getElementById("hazy-header-fix-transparency");
   if (!transparencyStyle) {
     transparencyStyle = document.createElement("style");
@@ -17,6 +17,14 @@
     document.head.appendChild(transparencyStyle);
   }
   transparencyStyle.textContent = `
+    .N6W22Ky7W6I93tr3vrqE,
+    .T2XRKvkWneSSMSOCEo40 {
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      --bgColor: transparent !important;
+      --background-base: transparent !important;
+    }
     :is(
       .main-entityHeader-container,
       .main-entityHeader-containerNormal,
