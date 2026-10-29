@@ -3,7 +3,7 @@
     script.setAttribute("type", "text/javascript");
     script.setAttribute(
       "src",
-      "https://raw.githubusercontent.com/hotviissp8/Hazy-Header-Fix/main/hazy.js?v=0.1.5-20261029"
+      "https://cdn.jsdelivr.net/gh/hotviissp8/Hazy-Header-Fix@v0.1.6/hazy.js"
     );
     document.head.appendChild(script);
   })();
